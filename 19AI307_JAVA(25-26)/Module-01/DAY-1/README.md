@@ -27,10 +27,12 @@ Write a java program to get name from the user (String) and print it.
 
 ## ALGORITHM :
 ```
-1.Create a Scanner object to read input from the user.
-2.Read a string input (the user's name).
-3.Store the input in the variable name.
-4.Display the message: "Hello, " + name
+1.Start the program.
+2.Import the necessary package 'java.util'
+3.Create a Scanner object to read input from the user.
+4.Read a string input (the user's name).
+5.Store the input in the variable name.
+6.Display the message: "Hello, " + name
 ```
 
 
@@ -66,5 +68,6 @@ public class prog{
 ## RESULT:
 
 Thus, the java program to get name from the user (String) and print it is executed successfully.
+
 
 
