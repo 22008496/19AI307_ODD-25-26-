@@ -4,8 +4,7 @@
 Write a Java program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables
 
 ## AIM:
-To Write a Java program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables
-
+To Write a Java program to create a class called Rectangle with private instance variables length and width.
 ## ALGORITHM :
 ```
 1.Start the program.
@@ -85,3 +84,4 @@ public class Main {
 ## RESULT:
 
 Thus, the program to create a class called Rectangle with private instance variables length and width is executed successfully.
+
