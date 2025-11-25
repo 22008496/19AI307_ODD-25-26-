@@ -17,9 +17,9 @@ To write a program to Sum of Prime Numbers up to N
 
 ## ALGORITHM :
 ```
-1.	Start the program.
-2.	Import the necessary package 'java.util'
-3.	Initialize sum = 0 to store the total of all prime numbers.
+1.Start the program.
+2.Import the necessary package 'java.util'
+3.Initialize sum = 0 to store the total of all prime numbers.
 4.If n ≤ 1, return false.
 5.If any divisor is found, return false; otherwise, return true.
 6.If isPrime(i) is true, add i to sum.
@@ -73,4 +73,5 @@ public class SumOfPrimes {
 ## RESULT:
 
  Thus, the program to print Sum of Prime Numbers up to N is executed successfully.
+
 
