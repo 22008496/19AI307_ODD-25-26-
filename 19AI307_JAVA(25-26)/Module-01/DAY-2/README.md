@@ -1,36 +1,43 @@
 # Ex.No:1(B) CONDITIONAL STATEMENT
 
 ## QUESTION:
-A dragon wakes based on temperature:
+A train company charges tickets based on age and travel class:
 
-If temperature < 0, it hibernates.
-If 0 ≤ temp ≤ 20, it snoozes.
-If 21 ≤ temp ≤ 35, it wakes.
-If temp > 35, it gets angry.
+Children (<12): ₹5 per km (any class)
 
-Write a java program to get the user input for temperature and display appropriate output.
+Adults (12–60):
+
+Sleeper: ₹10/km
+
+AC: ₹15/km
+
+Seniors (>60): ₹7/km (any class)
+
+Task: Accept age, distance and travel class (1 for Sleeper, 2 for AC)(follow the same order to get the inputs). Calculate fare.
 
 For example:
 
-Input	: -5
-Result : Hibernating
+Input	
+5
+100
+Result
+500
+
 
 
 ## AIM:
 
-To write a java program to get the user input for temperature and display appropriate output.
-
+To write a program that accepts the age, distance, and travel class (1 for Sleeper, 2 for AC) and calculates the train fare based on age-wise and class-wise fare rules.
 
 ## ALGORITHM :
 ```
-1.	Start the program.
-2.	Import the necessary package 'java.util'
-3.	Create a Scanner object to read input from the user.
-4.Read an integer value and store it in the variable temp.
-5.Check if temp < 0 : If true, print "Hibernating".
-6.Else if temp is between 0 and 20 (inclusive) : Print "Snoozing".
-7.Else if temp is between 21 and 35 (inclusive): Print "Awake".
-8. Else (i.e., temp > 35): Print "Angry".
+1.Start and read the inputs: age, distance, and travel class.
+2.Determine the rate per km based on age and class conditions.
+3.If age < 12, set rate = 5;
+   else if age 12–60, set rate = 10 for Sleeper or 15 for AC;
+   else if age > 60, set rate = 7.
+4.Calculate the fare using: fare = distance × rate.
+5.Display the total fare and Stop.
 ```
 
 
@@ -46,23 +53,35 @@ RegisterNumber:  212222040091
 ```
 
 ```
-import java.util.*;
-public class Main{
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int temp=sc.nextInt();
-        if(temp<0){
-            System.out.println("Hibernating");
+import java.util.Scanner;
+
+public class TrainFare {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int age = sc.nextInt();
+        int distance = sc.nextInt();
+
+        int farePerKm=0;;
+
+        if (age < 12) {
+            farePerKm = 5;
+        } else if (age > 60) {
+            farePerKm = 7;
+        } else { 
+            int travelClass = sc.nextInt();
+            if (travelClass == 1) {
+                farePerKm = 10;
+            } else if (travelClass == 2) {
+                farePerKm = 15;
+            } else {
+                System.out.println("Invalid class");
+                return;
+            }
         }
-        else if(temp>=0 && temp <=20){
-            System.out.println("Snoozing");
-        }
-        else if(temp >=21 && temp <=35){
-            System.out.println("Awake");
-        }
-        else{
-            System.out.println("Angry");
-        }
+
+        int totalFare = farePerKm * distance;
+        System.out.println(totalFare);
     }
 }
 ```
@@ -70,9 +89,10 @@ public class Main{
 
 ## OUTPUT:
 
-<img width="652" height="366" alt="image" src="https://github.com/user-attachments/assets/e3ad52a9-af69-45f5-98d7-07fddccacb65" />
+<img width="652" height="356" alt="image" src="https://github.com/user-attachments/assets/492431f7-c261-4417-aecd-114541a862fd" />
 
 
 ## RESULT:
 
-Thus, a java program to get the user input for temperature and display appropriate output is executed successfully.
+Thus, a java program to calculates the train fare based on age-wise and class-wise fare rules is executed successfully.
+
