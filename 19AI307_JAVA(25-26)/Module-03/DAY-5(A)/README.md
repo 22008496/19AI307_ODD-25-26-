@@ -1,22 +1,22 @@
 # Ex.No:3(E) INNER CLASS
 
 ## QUESTION:
-Write a Java program to find the square root of a number using Double wrapper class.
+Write an enum VehicleType (CAR, BIKE, BUS) with a constructor that takes number of wheels. Print wheel count for each.
 
 
 
 ## AIM:
-To write a Java program to find the square root of a number using Double wrapper class.
+To write an enum VehicleType (CAR, BIKE, BUS) with a constructor that takes number of wheels. Print wheel count for each.
 
 
 
 ## ALGORITHM :
 1.	Start the program.
 2.	Import the necessary package 'java.util'
-3.	Use the built-in Math.sqrt() function to compute the square root of the given number.
-4.	Store the result in a variable.
-5.	Display the original number and its square root.
-6.	Stop the program
+3.	Convert the input to uppercase and try to match it with an enum constant using valueOf().
+4.	If the input matches a valid enum, retrieve the number of wheels using getWheels().
+5.	Display the vehicle name and its wheel count.
+6.	If the input doesn’t match any enum, show an error message, then stop.
 
 
 
@@ -25,7 +25,7 @@ To write a Java program to find the square root of a number using Double wrapper
 ## PROGRAM:
  ```
 /*
-Program to implement a InnerClass using Java
+Program to implement a Wrapper Class using Java
 Developed by: Magesh.N
 RegisterNumber:  212222040091
 */
@@ -34,14 +34,33 @@ RegisterNumber:  212222040091
 ```
 import java.util.Scanner;
 
-public class SquareRootDemo {
+enum VehicleType {
+    CAR(4),
+    BIKE(2),
+    BUS(6);
+
+    private int wheels;
+
+    VehicleType(int wheels) {
+        this.wheels = wheels;
+    }
+
+    public int getWheels() {
+        return wheels;
+    }
+}
+
+public class VehicleEnumDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double num = sc.nextDouble();
+        String input = sc.next().toUpperCase();
 
-        double sqrt = Double.valueOf(Math.sqrt(num));
-
-        System.out.println("Square root of " + num + " is: " + sqrt);
+        try {
+            VehicleType vehicle = VehicleType.valueOf(input);
+            System.out.println(vehicle + " has " + vehicle.getWheels() + " wheels.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid vehicle type entered.");
+        }
 
         sc.close();
     }
@@ -55,9 +74,10 @@ public class SquareRootDemo {
 
 ## OUTPUT:
 
-<img width="840" height="357" alt="image" src="https://github.com/user-attachments/assets/ee9d2d55-b671-4b95-b6e4-1bef750955d8" />
+<img width="803" height="360" alt="image" src="https://github.com/user-attachments/assets/c9826371-743f-42a3-90c0-8737cf6d65cd" />
 
 
 ## RESULT:
 
-Thus,the program to find the square root of a number using Double wrapper class is executed successfully.
+Thus, the program to print wheel count for each is executed successfully.
+
